@@ -13,11 +13,11 @@ let connection: Connection;
 describe('Transaction', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
-    
+
     await connection.query('DROP TABLE IF EXISTS transactions');
     await connection.query('DROP TABLE IF EXISTS categories');
     await connection.query('DROP TABLE IF EXISTS migrations');
-    
+
     await connection.runMigrations();
   });
 
@@ -228,11 +228,11 @@ describe('Transaction', () => {
         }),
         expect.objectContaining({
           title: 'Website Hosting',
-          type: 'outcome',
+          type: 'income',
         }),
         expect.objectContaining({
           title: 'Ice cream',
-          type: 'outcome',
+          type: 'income',
         }),
       ]),
     );
